@@ -1,0 +1,13 @@
+#A peak element is an element that is strictly greater than its neighbors.
+
+if length is 1 then arr[0] is peak
+if arr[0]>arr[1] then 0 also peak
+if arr[n-1]>arr[n-2] then n-1 is peak
+then perform BS 
+if mid>mid-1 and mid>mid+1 this is peak
+else if mid-1 is greater than mid then peak may on left
+else if mid+1 is greater than mid then peak may on right
+also possible for multiple peaks as we need to find any of peak
+if mid-1>mid and mid+1>mid may goes infinite loop:
+  to avoid loop
+  instead of (else if mid+1 is greater than mid then peak may on right) using else if use else
