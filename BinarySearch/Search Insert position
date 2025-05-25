@@ -1,0 +1,24 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int n=nums.length;
+        int beg=0,end=n-1;
+        int index=n;
+        //here we have to find the upper boundary of element
+        // if we find target then return its position
+        //if target>mid then move right
+        //else store mid as its value  and move right
+        //ex [1 3 4] target=2 then mid>2 but its pos 1 may ans store it and move left
+        while(beg<=end){
+            int mid=(beg+end)/2;
+            if(nums[mid]>=target){
+              index=mid;
+              end=mid-1;
+            }
+            else{
+              beg=mid+1;
+            }
+            
+        }
+        return index;
+    }
+}
